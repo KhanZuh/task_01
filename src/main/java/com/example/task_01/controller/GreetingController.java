@@ -25,9 +25,8 @@ public class GreetingController {
 
     // Use a @RequestParam to get the value for timeOfDay from the url
     @GetMapping
-    public Greeting greet(@RequestParam(value = "name", defaultValue = "Zuhair") String name,
-                          @RequestParam(value = "timeOfDay", defaultValue = "Afternoon") String timeOfDay) {
-        return new Greeting(name, timeOfDay);
+    public Greeting greet(@RequestParam(value = "timeOfDay", defaultValue = "Afternoon") String timeOfDay) {
+        return new Greeting("Zuhair", timeOfDay);
     }
 
     // Add a second method to the controller to accept a GET request to http://localhost:8080/greeting/summer. HINT: research adding a value argument to the @GetMapping annotation.
